@@ -2001,8 +2001,8 @@
 
 	local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 	local Window = Fluent:CreateWindow({
-		Title = "Скрипт клана 讓我們迎接雷聲",
-		SubTitle = " Создан владельцем клана",
+		Title = "讓我們迎接雷聲",
+		SubTitle = " Russian version",
 		TabWidth = 160,
 		Theme = "Darker",
 		Acrylic = false,
@@ -2079,17 +2079,17 @@
 		Travel = Window:AddTab({
 			Title = "Телепорт"
 		}),
-		NoneTabsX = Window:AddTab({
-			Title = " "
-		}),
 		Main = Window:AddTab({
 			Title = "Авто фарм"
+		}),
+		Server = Window:AddTab({
+			Title = "Сервер"
 		}),
 		Misc = Window:AddTab({
 			Title = "Дополнительно"
 		}),
-		Server = Window:AddTab({
-			Title = "Сервер"
+		NoneTabsX = Window:AddTab({
+			Title = " "
 		}),
 		Raids = Window:AddTab({
 			Title = "Рейды"
@@ -2121,8 +2121,8 @@
 	}
 
 	Tabs.Discord:AddButton({
-		Title = "Скрипт был создан владельцем клана 讓我們迎接雷聲",
-		Description = "Обращаем Ваше внимание на то, что использование стороннего ПО, такого как данное, является нарушением правил платформы и может привести к блокировке Вашего аккаунта. Администрация проекта не принимает на себя никакой ответственности за сохранность Вашей учетной записи. Используйте на свой страх и риск.",
+		Title = "讓我們迎接雷聲 - Русская версия",
+		Description = "Это не оригинал скрипта а просто переделанная версия! Также все делалась под удобства создателя этой версии. Создатель версии @now_human также спасибо @greeq_. за то что помог расшифровать оригинальную версию скрипта",
 		Callback = function()
 			setclipboard(tostring(""))
 		end
@@ -2132,8 +2132,8 @@
 	if World3 then
 		Tabs.Main:AddSection("Trẩu Roblox")
 		local TeleportToggle = Tabs.Main:AddToggle("tpSubmarineWorker", {
-			Title = "Bay đến NPC Farm Level Trên 2600",
-			Description = "Teleport to Submarine Worker (Level >= 2600, World 3 only)",
+			Title = "Авто фарм уровня (Сабмарина)",
+			Description = "",
 			Default = false,
 			Callback = function(value)
 				_G.tpSubmarineWorker = value
@@ -2175,8 +2175,8 @@
 		end)
 	end
 	local FarmLevel = Tabs.Main:AddToggle("FarmLevel", {
-		Title = "Auto Farm Level",
-		Description = "Famr level cày cấp",
+		Title = "Авто фарм уровня",
+		Description = "",
 		Default = false
 	})
 	FarmLevel:OnChanged(function(Value)
@@ -2224,8 +2224,8 @@
 	end)
 
 	local BossDropdown = Tabs.Main:AddDropdown("BossDropdown", {
-		Title = "Chọn boss",
-		Description = "Chọn boss để farm",
+		Title = "Выберите босса",
+		Description = "",
 		Values = Boss,
 		Default = 1,
 		Callback = function(value)
@@ -2233,8 +2233,8 @@
 		end
 	})
 	local FarmBoss = Tabs.Main:AddToggle("FarmBoss", {
-		Title = "Auto Farm Boss",
-		Description = "Tự động farm boss đã chọn",
+		Title = "Авто фарм босса",
+		Description = "",
 		Default = false
 	})
 	FarmBoss:OnChanged(function(value)
@@ -2355,8 +2355,8 @@
 	end
 	if World2 then
 	local Zou = Tabs.Main:AddToggle("Zou", {
-		Title = "Auto Zou Quest",
-		Description = "Tự động lên sea 3 (yêu cầu level 1500)",
+		Title = "Авто Цзоу Квест",
+		Description = "",
 		Default = false
 	})
 	Zou:OnChanged(function(Value)
@@ -2809,10 +2809,10 @@
 		end
 	end)
 	end
-	Tabs.Main:AddSection("Miscellanea / Quest")
+	Tabs.Main:AddSection("Разное / Квест")
 	local ClosetMons = Tabs.Main:AddToggle("ClosetMons", {
-		Title = "Auto Farm Nearest",
-		Description = "Farm Xung Quanh",
+		Title = "Авто фарм окружностей",
+		Description = "",
 		Default = false
 	})
 	ClosetMons:OnChanged(function(Value)
@@ -2838,8 +2838,8 @@
 	end)
 	if World2 then
 	local FactoryRaids = Tabs.Main:AddToggle("FactoryRaids", {
-		Title = "Auto Factory Raid",
-		Description = "Đánh Nhà Máy",
+		Title = "Авто фабрика",
+		Description = "",
 		Default = false
 	})
 	FactoryRaids:OnChanged(function(Value)
@@ -2866,8 +2866,8 @@
 	end
 	if World3 then
 	local CastleRaids = Tabs.Main:AddToggle("CastleRaids", {
-		Title = "Auto Pirate Raid",
-		Description = "Auto Đánh Hải Tặc",
+		Title = "Авто пиратский рейд",
+		Description = "",
 		Default = false
 	})
 	CastleRaids:OnChanged(function(Value)
@@ -2930,7 +2930,7 @@
 	end)
 	end
 	Test = Tabs.Main:AddDropdown("Test", {
-		Title = "Choose Material",
+		Title = "Выберите материал",
 		Values = MaterialList,
 		Multi = false,
 		Default = nil
@@ -2939,8 +2939,8 @@
 		getgenv().SelectMaterial = Value
 	end)
 	Toggle = Tabs.Main:AddToggle("Toggle", {
-		Title = "Auto Materials",
-		Description = "Farm Nguyên Liệu",
+		Title = "Авто фарм материала",
+		Description = "",
 		Default = false
 	})
 	Toggle:OnChanged(function(Value)
@@ -2987,8 +2987,8 @@
 	end)
 	if World2 then
 	local Q = Tabs.Main:AddToggle("Q", {
-		Title = "Auto Farm Ectoplasm",
-		Description = "Farm Vật Chất Kì Dị",
+		Title = "Авто фарм ектоплазмы",
+		Description = "",
 		Default = false
 	})
 	Q:OnChanged(function(Value)
@@ -3019,7 +3019,7 @@
 		end
 	end)
 	local Bartilo = Tabs.Main:AddToggle("Bartilo", {
-		Title = "Auto hoàn thành nhiệm vụ bartilo",
+		Title = "Авто Бартило квест",
 		Description = "",
 		Default = false
 	})
@@ -3188,7 +3188,7 @@
 	end)
 	end
 	local Berry = Tabs.Main:AddToggle("Berry", {
-		Title = "Auto Collect Berry",
+		Title = "Авто поднимать берри",
 		Description = "",
 		Default = false
 	})
@@ -3224,7 +3224,7 @@
 		end
 	end)
 	local Chest = Tabs.Main:AddToggle("Chest", {
-		Title = "Auto Collect Chest",
+		Title = "Авто сбор сундуков",
 		Description = "",
 		Default = false
 	})
@@ -3262,13 +3262,13 @@
 			end
 		end
 	end)
-	Tabs.Main:AddSection("Miscellanea / Mastery")
+	Tabs.Main:AddSection("Разное / Мастерство")
 	local posMastery = {
 		"Cake",
 		"Bone"
 	}
 	local Mastery_Config = Tabs.Main:AddDropdown("Mastery_Config", {
-		Title = "Choose Island",
+		Title = "Выбрать остров",
 		Values = posMastery,
 		Multi = false,
 		Default = 1
@@ -3277,7 +3277,7 @@
 		SelectIsland = Value
 	end)
 	local MasteryFruits = Tabs.Main:AddToggle("MasteryFruits", {
-		Title = "Auto Mastery Fruits",
+		Title = "Авто мастери фруктов",
 		Description = "",
 		Default = false
 	})
@@ -3333,7 +3333,7 @@
 		end
 	end)
 	local MasteryGun = Tabs.Main:AddToggle("MasteryGun", {
-		Title = "Auto Mastery Gun",
+		Title = "Авто мастери оружия",
 		Description = "",
 		Default = false
 	})
@@ -3430,7 +3430,7 @@
 		end
 	end)
 	local MasterySword = Tabs.Main:AddToggle("MasterySword", {
-		Title = "Auto Mastery All Sword",
+		Title = "Авто мастери всех мечей",
 		Description = "",
 		Default = false
 	})
@@ -3894,7 +3894,7 @@
 	end)
 	end
 	local Q = Tabs.Main:AddToggle("Q", {
-		Title = "Auto Unlock Phoenix dungeon",
+		Title = "Авто разблокировка рейда Феникса",
 		Description = "",
 		Default = false
 	})
@@ -3929,9 +3929,9 @@
 		end
 	end)
 
-	Tabs.Main:AddSection("Buso/Aura Colours")
+	Tabs.Main:AddSection("Хаки / Цвета ауры")
 	local Q = Tabs.Main:AddToggle("Q", {
-		Title = "Auto Teleport Barista Cousin",
+		Title = "Автотелепортация кузена бариста",
 		Description = "",
 		Default = false
 	})
@@ -3952,14 +3952,14 @@
 		end
 	end)
 	Tabs.Main:AddButton({
-		Title = "Buy Buso Colors",
+		Title = "Купить цвета хаки",
 		Description = "",
 		Callback = function()
 			replicated.Remotes.CommF_:InvokeServer("ColorsDealer", "2")
 		end
 	})
 	local Q = Tabs.Main:AddToggle("Q", {
-		Title = "Auto Rainbow Colors",
+		Title = "Авто цвета радуги",
 		Description = "",
 		Default = false
 	})
@@ -4051,7 +4051,7 @@
 		end)
 	end)
 	local Q = Tabs.Main:AddToggle("Q", {
-		Title = "Accept Rainbow Quest Faster",
+		Title = "Квест радужной ауры (Быстро)",
 		Description = "",
 		Default = false
 	})
@@ -4059,9 +4059,9 @@
 		_G.GetQFast = Value
 	end)
 
-	Tabs.Main:AddSection("Instinct / Observation")
+	Tabs.Main:AddSection("Инстинкт / Кен")
 	local Q = Tabs.Main:AddToggle("Q", {
-		Title = "Auto Farm Observation",
+		Title = "Авто фарм кена",
 		Description = "",
 		Default = false
 	})
@@ -4141,7 +4141,7 @@
 		end
 	end)
 	local Q = Tabs.Main:AddToggle("Q", {
-		Title = "Auto Observation V2",
+		Title = "Авто фарм кена В2",
 		Description = "",
 		Default = false
 	})
@@ -4240,9 +4240,9 @@
 			end
 		end
 	end)
-	Tabs.Main:AddSection("Upgrade Races V3")
+	Tabs.Main:AddSection("Апгрейд расы до В3")
 	local Q = Tabs.Main:AddToggle("Q", {
-		Title = "Auto Upgrade Mink V3",
+		Title = "Авто Mink V3",
 		Description = "",
 		Default = false
 	})
@@ -4287,7 +4287,7 @@
 		end
 	end)
 	local Q = Tabs.Main:AddToggle("Q", {
-		Title = "Auto Upgrade Human V3",
+		Title = "Авто Human V3",
 		Description = "",
 		Default = false
 	})
@@ -4356,7 +4356,7 @@
 		end
 	end)
 	local Q = Tabs.Main:AddToggle("Q", {
-		Title = "Auto Upgrade Skypiea V3",
+		Title = "Авто Skypiea V3",
 		Description = "",
 		Default = false
 	})
@@ -4406,7 +4406,7 @@
 		end
 	end)
 	local Q = Tabs.Main:AddToggle("Q", {
-		Title = "Auto Upgrade FishMan V3",
+		Title = "Авто FishMan V3",
 		Description = "",
 		Default = false
 	})
@@ -4449,9 +4449,9 @@
 		end
 	end)
 
-	Tabs.Main:AddSection("Dark Dragger + Valkyrie")
+	Tabs.Main:AddSection("Дарк даггер + Валкирия")
 	local Q = Tabs.Main:AddToggle("Q", {
-		Title = "Auto Valkyrie",
+		Title = "Авто Валькирия",
 		Description = "",
 		Default = false
 	})
@@ -4478,7 +4478,7 @@
 		end
 	end)
 	local Q = Tabs.Main:AddToggle("Q", {
-		Title = "Auto Unlocked Puzzle",
+		Title = "Авто разблокированная головоломка",
 		Description = "",
 		Default = false
 	})
@@ -4534,7 +4534,7 @@
 		end
 	end)
 
-	Tabs.Settings:AddSection("Settings / Configure")
+	Tabs.Settings:AddSection("Настройка / Конфигурация")
 	local _Weapon = {
 		"Melee",
 		"Sword",
@@ -4794,7 +4794,7 @@
 		end
 	end)      
 
-	Tabs.Settings:AddSection("Stats Upgrade")
+	Tabs.Settings:AddSection("Прокачка статистики")
 	local StatusSelect = Tabs.Settings:AddSlider("StatusSelect", {
 		Title = "Количество",
 		Description = "",
@@ -10207,7 +10207,7 @@ end)
 		end)
 	end
 
-	Tabs.Travel:AddSection("Travel - Worlds")
+	Tabs.Travel:AddSection("Телепортироватся в миры")
 	Tabs.Travel:AddButton({
 		Title = "Телепорт в первое море",
 		Description = "",
@@ -10229,7 +10229,7 @@ end)
 			replicated.Remotes.CommF_:InvokeServer("TravelZou")
 		end
 	})
-	Tabs.Travel:AddSection("Travel - Island")
+	Tabs.Travel:AddSection("Телепортироватся в острова")
 	Location = {}
 	for i, v in pairs(workspace["_WorldOrigin"].Locations:GetChildren()) do
 		table.insert(Location , v.Name)
@@ -10262,7 +10262,7 @@ end)
 		end
 	end)
 
-	Tabs.Travel:AddSection("Travel - Portal")
+	Tabs.Travel:AddSection("Телепортироватся в порталы")
 	if World1 then
 		Location_Portal = {
 			"Sky",
@@ -10318,7 +10318,7 @@ end)
 		end
 	})
 
-	Tabs.Travel:AddSection("Travel - NPCs")
+	Tabs.Travel:AddSection("Телепортироватся к НПС")
 	for _, v in pairs(replicated.NPCs:GetChildren()) do
 		table.insert(NPCList, v.Name)
 	end
@@ -10722,8 +10722,8 @@ end)
 		end
 	})
 	Tabs.Server:AddButton({
-		Title = "Vào SERVER VIP FREE",
-		Description = "Tạo server riêng và teleport (cần >1 người)",
+		Title = "Сервер без человек",
+		Description = "",
 		Callback = function()
 			task.spawn(function()
 				-- MD5 và các hàm hỗ trợ
@@ -10945,21 +10945,21 @@ end)
 		end
 	})
 	Tabs.Server:AddButton({
-		Title = "Rejoin Server",
+		Title = "Перезаход на сервер",
 		Description = "",
 		Callback = function()
 			game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
 		end
 	})
 	Tabs.Server:AddButton({
-		Title = "Hop Server",
+		Title = "Поменять сервер",
 		Description = "",
 		Callback = function()
 			Hop()
 		end
 	})
 	Tabs.Server:AddButton({
-		Title = "Hop to Lowest Players",
+		Title = "Сервер почти без человек",
 		Description = "",
 		Callback = function()
 			local Http = game:GetService("HttpService")
@@ -10982,7 +10982,7 @@ end)
 	})
 
 	Tabs.Server:AddButton({
-		Title = "Hop to Lowest Pings Server",
+		Title = "Сервер с малым пингом",
 		Description = "",
 		Callback = function()
 			local HTTPService = game:GetService("HttpService")
@@ -11025,7 +11025,7 @@ end)
 	})
 
 	local JobID = Tabs.Server:AddInput("JobID", {
-		Title = "JobID",
+		Title = "Айди сервера",
 		Default = "",
 		Placeholder = "",
 		Numeric = false, -- Only allows numbers
@@ -11053,31 +11053,31 @@ end)
 	end)
 
 	Tabs.Server:AddButton({
-		Title = "Teleport [Job ID]",
+		Title = "Телепорт по айди",
 		Description = "",
 		Callback = function()
 			replicated['__ServerBrowser']:InvokeServer("teleport", _G.JobId)
 		end
 	})
 	Tabs.Server:AddButton({
-		Title = "Copy JobID",
+		Title = "Копировать айди сервера",
 		Description = "",
 		Callback = function()
 			setclipboard(tostring(game.JobId))
 		end
 	})
 
-	Tabs.Misc:AddSection("Player Gui / Others")
+	Tabs.Misc:AddSection("Интерфейс игрока / Другое")
 
 	Tabs.Misc:AddButton({
-		Title = "Open Awakenings Expert",
+		Title = "Эксперт по открытым пробуждениям",
 		Description = "",
 		Callback = function()
 			plr.PlayerGui.Main.AwakeningToggler.Visible = true
 		end
 	})
 	Tabs.Misc:AddButton({
-		Title = "Open Title Selection",
+		Title = "Открытый выбор титула",
 		Description = "",
 		Callback = function()
 			replicated.Remotes.CommF_:InvokeServer("getTitles", true)
@@ -11085,7 +11085,7 @@ end)
 		end
 	})
 	DisbleChat = Tabs.Misc:AddToggle("DisbleChat", {
-		Title = "Disable Chat GUI",
+		Title = "Отключить графический интерфейс чата",
 		Description = "",
 		Default = false
 	})
@@ -11100,7 +11100,7 @@ end)
 		end
 	end)
 	DisbleLeaderB = Tabs.Misc:AddToggle("DisbleLeaderB", {
-		Title = "Disable Leader Board GUI",
+		Title = "Отключить интерфейс таблицы лидеров",
 		Description = "",
 		Default = false
 	})
@@ -11115,21 +11115,21 @@ end)
 		end
 	end)
 	Tabs.Misc:AddButton({
-		Title = "Set Pirate Team",
+		Title = "Установить пиратскую команду",
 		Description = "",
 		Callback = function()
 			Pirates()
 		end
 	})  
 	Tabs.Misc:AddButton({
-		Title = "Set Marine Team",
+		Title = "Установить морскую команду",
 		Description = "",
 		Callback = function()
 			Marines()
 		end
 	})
 	UnPortal = Tabs.Misc:AddToggle("UnPortal", {
-		Title = "Unlock All Portals",
+		Title = "Разблокировать все порталы",
 		Description = "unlocked portal for who doesn't defeat rip_indra",
 		Default = false
 	})
@@ -11154,7 +11154,7 @@ end)
 		end
 	end)
 
-	Tabs.Misc:AddSection("Graphics / Haki Stats")
+	Tabs.Misc:AddSection("Графика / Статистика Хаки")
 
 	HakiSt = {
 		"State 0",
@@ -11165,7 +11165,7 @@ end)
 		"State 5"
 	}
 	HakiStat = Tabs.Misc:AddDropdown("HakiStat", {
-		Title = "Select Haki States",
+		Title = "Состояния Хаки",
 		Values = HakiSt,
 		Multi = false,
 		Default = 1
@@ -11174,7 +11174,7 @@ end)
 		_G.SelectStateHaki = Value
 	end)
 	Tabs.Misc:AddButton({
-		Title = "ChangeBusoStage",
+		Title = "Изменить состояния Хаки",
 		Description = "",
 		Callback = function()
 			if _G.SelectStateHaki == "State 0" then
@@ -11193,7 +11193,7 @@ end)
 		end
 	})
 	rtxM = Tabs.Misc:AddToggle("rtxM", {
-		Title = "Turn on RTX Mode",
+		Title = "Включить режим RTX",
 		Description = "",
 		Default = false
 	})
@@ -11240,7 +11240,7 @@ end)
 		end
 	end)
 	Tabs.Misc:AddButton({
-		Title = "Turn on Fast Mode",
+		Title = "Включить быстрый режим",
 		Description = "",
 		Callback = function()
 			for _, zx in next, workspace:GetDescendants() do
@@ -11251,14 +11251,14 @@ end)
 		end
 	})
 	Tabs.Misc:AddButton({
-		Title = "Turn on Low CPU",
+		Title = "Включить низкую загрузку ЦП",
 		Description = "",
 		Callback = function()
 			LowCpu()
 		end
 	})
 	Tabs.Misc:AddButton({
-		Title = "Turn on increase Boats",
+		Title = "Включить увеличение Лодки",
 		Description = "",
 		Callback = function()
 			for _, v in pairs(workspace.Boats:GetDescendants()) do
@@ -11272,7 +11272,7 @@ end)
 		end
 	})
 	Tabs.Misc:AddButton({
-		Title = "Remove Sky Fog",
+		Title = "Удалить туман с неба",
 		Description = "",
 		Callback = function()
 			if Lighting:FindFirstChild("LightingLayers") then
@@ -11287,9 +11287,9 @@ end)
 		end
 	})
 
-	Tabs.Misc:AddSection("Configure - God")
+	Tabs.Misc:AddSection("Настроить - Бог")
 	Tabs.Misc:AddButton({
-		Title = "Rain Fruits (Client)",
+		Title = "Фрукты дождя (Клиент)",
 		Description = "",
 		Callback = function()
 			for i, v in pairs(game:GetObjects("rbxassetid://14759368201")[1]:GetChildren()) do
@@ -11308,7 +11308,7 @@ end)
 		end
 	})
 	briggt1 = Tabs.Misc:AddToggle("briggt1", {
-		Title = "Turn on Full Bright",
+		Title = "Включить полную яркость",
 		Description = "",
 		Default = false
 	})
@@ -11326,11 +11326,11 @@ end)
 	end)
 
 	Cheat_DayNight = {
-		"Day",
-		"Night"
+		"День",
+		"Ночь"
 	}
 	DayN = Tabs.Misc:AddDropdown("DayN", {
-		Title = "Select Time",
+		Title = "Выберите время",
 		Values = Cheat_DayNight,
 		Multi = false,
 		Default = 1
@@ -11339,7 +11339,7 @@ end)
 		_G.SelectDN = Value
 	end)
 	dayornight = Tabs.Misc:AddToggle("dayornight", {
-		Title = "Turn on Time",
+		Title = "Включить время",
 		Description = "",
 		Default = false
 	})
@@ -11358,8 +11358,8 @@ end)
 		end
 	end)
 	walkWater = Tabs.Misc:AddToggle("walkWater", {
-		Title = "Turn on Walk on Water",
-		Description = "walk on water",
+		Title = "Включить ходьбу по воде",
+		Description = "",
 		Default = true
 	})
 	walkWater:OnChanged(function(Value)
@@ -11371,8 +11371,8 @@ end)
 		end
 	end)
 	iceWalk = Tabs.Misc:AddToggle("iceWalk", {
-		Title = "Turn on Ice Walk",
-		Description = "Ice walk just like walk on water but have ice effect",
+		Title = "Включить походку льда",
+		Description = "",
 		Default = false
 	})
 	iceWalk:OnChanged(function(Value)
